@@ -71,7 +71,6 @@
     }
     body {background:#000; font-family: 'NeoDunggeunmoPro-Regular'; font-size: 10px;}
     .landing {display: block; position: relative; max-width: 40rem; margin: 0 auto; text-align:center; overflow: hidden; }
-    .bg_star{}
     .bg_star span{display:block; position:absolute; width:2rem; height:2rem; background:url(/images/ico_star.png) no-repeat 50%/100%; animation:blink 1s infinite;}
     .bg_star span:nth-child(1){left:5rem; top:5em;}
     .bg_star span:nth-child(2){left:10rem; top:50rem; animation-delay:.1s;}
@@ -87,6 +86,17 @@
         50%,90%{opacity:1;}
     }
     .quiz-col{padding:2rem 0;}
+    .quiz-col .start-box{position:relative; background-color:#fff; border-radius:.4rem; padding:2rem 4rem;}
+    .quiz-col .start-box::before{content:'희랑별'; left:3rem; top:18rem; position:absolute; background-color:#fff; color:#000; padding:1rem; font-size:2rem; box-shadow:-.1rem .1rem .1rem #000; border-radius:1rem; z-index:5; animation:fadeUp .5s linear forwards; opacity:0;}
+    .quiz-col .start-box::after{content:'풀어볼래요?'; right:2rem; top:27rem; position:absolute; background-color:#fff; color:#000; padding:1rem; font-size:2rem; box-shadow:.1rem .1rem .1rem #000; border-radius:1rem; z-index:5; animation:fadeUp .5s 1s linear forwards; opacity:0;}
+    @keyframes fadeUp {
+        from{transform:translateY(50%);}
+        to{transform:translateY(0); opacity:1;}
+    }
+    .quiz-col .start-box h3{font-size:3rem; color:#FF5647;}
+    .quiz-col .start-box img{display:block; max-width:100%; margin:2rem auto; border-radius:.4rem;}
+    .quiz-col .start-box .start-btn{width:100%; padding:1.4rem 0; background-color:#FF5647; font-family: 'NeoDunggeunmoPro-Regular'; font-size:1.4rem; color:#fff; border:0; border-radius:.4rem;}
+    .quiz-col .quiz-start{display:none;}
     .quiz-col .rest-box{margin-bottom:3.2rem;}
     .quiz-col .rest-box .progress-bar{width:100%; height:.4rem; margin-bottom:3rem; background-color:#ECECF6;}
     .quiz-col .rest-box .progress-bar span{display:block; width:0%; height:100%; background-color:#ff6000; transition:1s all linear;}
@@ -104,15 +114,24 @@
     .quiz-col .answer-box span.correct input[type="radio"] + label, .quiz-col .answer-box span.correct-answer input[type="radio"] + label{color:#17C624; border-color:#17C624;}
     .quiz-col .answer-box span.wrong input[type="radio"] + label{color:#FF5647; border-color:#FF5647;}
 
-    .fixed-box {position: fixed; bottom: 0; left: 0; right: 0; z-index: 10; }
+    .fixed-box {display:none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 10; }
     .fixed-box button {width:100%; height:4rem; font-weight: 700; font-size: 1.4rem; line-height:4rem; background: #dfdfdf; color:#fff; cursor:default; outline:none; border:0; box-sizing:border-box; font-family: 'NeoDunggeunmoPro-Regular'; }
     .fixed-box button:disabled{cursor:default;}
     .fixed-box button.active{background-color:#fff; cursor:pointer; background-color: #ffc000; color:#000;}
     .fixed-box button.correct-active::before{content:'정답!'; display:inline-block; margin-right:.3rem; color:#25c225;}
 
+    .landing.active .quiz-start, .landing.active .fixed-box{display:block;}
+    .landing.active .start-box{display:none;}
+
     @media screen and (max-width:1024px) {
         body{max-height:100vh; overflow:hidden;}
         .landing {max-height:100vh; max-width: 100%; padding:0 1rem; font-size:21px; box-sizing:border-box; overflow-x:hidden;}
+        .quiz-col .start-box{max-height:100%; border-radius:.2em; padding:2em 5em;}
+        .quiz-col .start-box::before{left:3em; top:10em; padding:.5em; font-size:1.5em; border-radius:.2em;}
+        .quiz-col .start-box::after{right:3em; top:15em; padding:.5em; font-size:1.5em; border-radius:.2em;}
+        .quiz-col .start-box h3{font-size:2.8em;}
+        .quiz-col .start-box img{margin:1.5em auto; width:20em; border-radius:.2em;}
+        .quiz-col .start-box .start-btn{padding:.8em 0; max-width:10.5em; font-size:2em; border-radius:.2em;}
         .quiz-col .rest-box{margin-bottom:2em;}
         .quiz-col .rest-box .progress-bar{ height:.2rem; margin-bottom:1rem;}
         .quiz-col .rest-box em{font-size:2em; text-shadow:.1rem .1rem #ffc000;}
@@ -123,7 +142,7 @@
         .quiz-col .answer-box{margin-top:1.6rem;}
         .quiz-col .answer-box span{}
         .quiz-col .answer-box span + span{margin-top:.8rem;}
-        .quiz-col .answer-box label{font-size:1.4em; border-radius:.2rem; line-height:2.5rem;}
+        .quiz-col .answer-box label{font-size:1.4em; border-radius:.2rem; line-height:1em;}
         .fixed-box button { height:4rem ;font-size: 1.2rem; line-height:4rem; }
         .fixed-box button.correct-active::before{margin-right:.3rem;}
     }
@@ -142,21 +161,29 @@
         <span></span>
         <span></span>
     </div>
-    <section class="landing gnb-none">
+    <section class="landing">
       <div class="quiz-col">
         <div class="inner-col">
-            <div class="rest-box">
-                <div class="progress-bar">
-                    <span class="progress"></span>
-                </div>
-                <em>총 <span id="totalQuestion"></span>문제 중 <span id="remainQuestion"></span>문제가 남았어요!</em>
-                
+            <div class="start-box">
+                <h3>희재력 테스트</h3>
+                <img src="https://hyohyoy.github.io/images/heejae_start.jpg" alt="김희재 사진">
+                <!-- <img src="/images/heejae_start.jpg" alt=""> -->
+                <button type="button" class="start-btn" onclick="quizShow();">테스트 시작하기</button>
             </div>
-          <div class="quiz-box">
-            <em>Question <span id="questionNum"></span></em>
-            <strong id="question"></strong>
-            <div class="answer-box" id="answerBox"></div>
-          </div>
+            <div class="quiz-start">
+                <div class="rest-box">
+                    <div class="progress-bar">
+                        <span class="progress"></span>
+                    </div>
+                    <em>총 <span id="totalQuestion"></span>문제 중 <span id="remainQuestion"></span>문제가 남았어요!</em>
+                    
+                </div>
+                <div class="quiz-box">
+                    <em>Question <span id="questionNum"></span></em>
+                    <strong id="question"></strong>
+                    <div class="answer-box" id="answerBox"></div>
+                </div>
+            </div>
         </div>
       </div>
       <div class="fixed-box">
@@ -219,7 +246,15 @@
         ];
 
 
+        function quizShow(){
+            document.querySelector('.landing').classList.add('active')
+        }
+        function quizHide(){
+            document.querySelector('.landing').classList.remove('active')
+        }
     $(function(){
+
+
         let progressBar = document.querySelector('.progress');
         let prgressValue = 0;
         
@@ -280,8 +315,8 @@
 
             if (answer === quizData.length) {
                 document.querySelector('.quiz-box').innerHTML = '';
-                document.querySelector('.quiz-box').innerHTML += `<p>${quizData.length} 희재력 중 당신은 +${correctCount} 희재력!</p> <br> <img src="https://hyohyoy.github.io/images/heejae_finish.png" alt="">`
-                btnAnswer.textContent = '문제 풀이 완료'
+                document.querySelector('.quiz-box').innerHTML += `<p>${quizData.length} 희재력 중 당신은 +${correctCount} 희재력!</p> <br> <img src="https://hyohyoy.github.io/images/heejae_finish.png" alt=""> <button type="button" class="start-btn" onclick="location.reload()">처음으로 돌아가기</button>`
+                btnAnswer.style.display = 'none'
                 document.querySelector('#remainQuestion').textContent = 0;
                 document.querySelector('.btn-answer').classList.remove('correct-active');
                
