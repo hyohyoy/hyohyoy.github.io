@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>희재는??</title>
+    <title>희재력 테스트</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
@@ -20,7 +20,6 @@
   <body>
     <header></header>
     <style>
-    /* 초기화 */
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,
@@ -41,7 +40,6 @@
         font: inherit;
         vertical-align: baseline;
     }
-    /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure, 
     footer, header, hgroup, menu, nav, section {
         display: block;
@@ -71,63 +69,76 @@
         font-weight: normal;
         font-style: normal;
     }
-      body {
-        background-color: #0c143b;
-        font-family: 'NeoDunggeunmoPro-Regular';
-        font-size: 10px;
-     }
+    body {background:#000; font-family: 'NeoDunggeunmoPro-Regular'; font-size: 10px;}
+    .landing {display: block; position: relative; max-width: 40rem; margin: 0 auto; text-align:center; overflow: hidden; }
+    .bg_star{}
+    .bg_star span{display:block; position:absolute; width:2rem; height:2rem; background:url(/images/ico_star.png) no-repeat 50%/100%; animation:blink 1s infinite;}
+    .bg_star span:nth-child(1){left:5rem; top:5em;}
+    .bg_star span:nth-child(2){left:10rem; top:50rem; animation-delay:.1s;}
+    .bg_star span:nth-child(3){right:8rem; top:49rem; animation-delay:.2s;}
+    .bg_star span:nth-child(4){right:5rem; top:10rem; animation-delay:.3s;}
+    .bg_star span:nth-child(5){left:20rem; top:32rem; animation-delay:.4s;}
+    .bg_star span:nth-child(6){left:10rem; top:18rem; animation-delay:.5s;}
+    .bg_star span:nth-child(7){left:34rem; top:54rem; animation-delay:.6s;}
+    .bg_star span:nth-child(8){right:15rem; top:28rem; animation-delay:.7s;}
+    .bg_star span:nth-child(9){right:34rem; top:52rem; animation-delay:.8s;}
+    @keyframes blink{
+        0%,100%{opacity:0;}
+        50%,90%{opacity:1;}
+    }
+    .quiz-col{padding:2rem 0;}
+    .quiz-col .rest-box{margin-bottom:3.2rem;}
+    .quiz-col .rest-box .progress-bar{width:100%; height:.4rem; margin-bottom:3rem; background-color:#ECECF6;}
+    .quiz-col .rest-box .progress-bar span{display:block; width:0%; height:100%; background-color:#ff6000; transition:1s all linear;}
+    .quiz-col .rest-box em{font-size:2.2rem; color:#fff; text-shadow:.2rem .2rem #ffc000;}
+    .quiz-col .quiz-box{padding:3.2rem 1.9rem; background-color:#fff; box-shadow:0 0 1rem rgba(0,0,0,0.1); border-radius:.8rem; border:.5rem solid #ffc000;}
+    .quiz-col .quiz-box em{display:inline-block; padding:.3rem .8rem; font-size:1.4rem; color:#fff; background-color:#FF5647; border-radius:.2rem;}
+    .quiz-col .quiz-box strong{display:block; margin-top:2.4rem; font-size:2rem; word-break:keep-all;}
+    .quiz-col .quiz-box p{margin-top:.8rem; font-size:2rem; color:#717188;}
+    .quiz-col .answer-box{margin-top:3.2rem;}
+    .quiz-col .answer-box span{display:block; width:100%; height:4.8rem; line-height:4.8rem; box-sizing:border-box;}
+    .quiz-col .answer-box span + span{margin-top:1.6rem;}
+    .quiz-col .answer-box label{display:block; position:relative; width:100%; height:100%; font-size:1.6rem; border:1px solid #DFDFEA; border-radius:.4rem;  cursor:pointer;}
+    .quiz-col .answer-box span input[type="radio"]:checked + label{font-weight:700; border-color:#28284B;}
+    .quiz-col .answer-box span.correct input[type="radio"] + label, .quiz-col .answer-box span.correct-answer input[type="radio"] + label{color:#17C624; border-color:#17C624;}
+    .quiz-col .answer-box span.wrong input[type="radio"] + label{color:#FF5647; border-color:#FF5647;}
 
-      .landing {
-        display: block;
-        position: relative;
-        max-width: 40rem;
-        margin: 0 auto;
-        text-align:center;
-        overflow: hidden;
-      }
+    .fixed-box {position: fixed; bottom: 0; left: 0; right: 0; z-index: 10; }
+    .fixed-box button {width:100%; height:6rem; font-weight: 700; font-size: 1.6rem; line-height:6rem; background: #dfdfdf; color:#fff; cursor:default; outline:none; border:0; box-sizing:border-box; font-family: 'NeoDunggeunmoPro-Regular'; }
+    .fixed-box button:disabled{cursor:default;}
+    .fixed-box button.active{background-color:#fff; cursor:pointer; border:.3rem solid #ffc000; color:#000; box-shadow:inset .2rem .2rem .5rem #ddd;}
+    .fixed-box button.correct-active::before{content:'정답!'; display:inline-block; margin-right:.3rem; color:#17C624;}
 
-
-     .quiz-col{padding:2rem 0;}
-     .quiz-col .rest-box{margin-bottom:3.2rem;}
-     .quiz-col .rest-box .progress-bar{width:100%; height:.4rem; margin-bottom:3rem; background-color:#ECECF6;}
-     .quiz-col .rest-box .progress-bar span{display:block; width:0%; height:100%; background-color:#ff6000; transition:1s all linear;}
-     .quiz-col .rest-box em{font-size:2.2rem; color:#fff; text-shadow:.2rem .2rem #f500d0;}
-     .quiz-col .quiz-box{padding:3.2rem 1.9rem; background-color:#fff; box-shadow:0 0 1rem rgba(0,0,0,0.1); border-radius:1.2rem;}
-     .quiz-col .quiz-box em{display:inline-block; padding:.3rem .8rem; font-size:1rem; color:#fff; background-color:#59AFFF; border-radius:.2rem;}
-     .quiz-col .quiz-box strong{display:block; margin-top:2.4rem; font-size:2rem; word-break:keep-all;}
-     .quiz-col .quiz-box p{margin-top:.8rem; font-size:2rem; color:#717188;}
-     .quiz-col .answer-box{margin-top:3.2rem;}
-     .quiz-col .answer-box span{display:block; width:100%; height:4.8rem; line-height:4.8rem; box-sizing:border-box;}
-     .quiz-col .answer-box span + span{margin-top:1.6rem;}
-     .quiz-col .answer-box label{display:block; position:relative; width:100%; height:100%; font-size:1.6rem; border:1px solid #DFDFEA; border-radius:2rem;  cursor:pointer;}
-     .quiz-col .answer-box span input[type="radio"]:checked + label{font-weight:700; border-color:#28284B;}
-     .quiz-col .answer-box span.correct input[type="radio"] + label, .quiz-col .answer-box span.correct-answer input[type="radio"] + label{color:#17C624; border-color:#17C624;}
-     .quiz-col .answer-box span.wrong input[type="radio"] + label{color:#FF5647; border-color:#FF5647;}
-     .quiz-col .answer-box span.correct-answer input[type="radio"] + label::after{content:'정답을 확인해 보세요'; position:absolute; left:0; top:-.9rem; width:10.4rem; height:1.8rem; font-size:1rem; line-height:1.8rem; color:#fff; background-color:#17C624; border-radius:1rem;}
-     .quiz-col .answer-box span.correct-answer input[type="radio"] + label::before{content:''; position:absolute; left:2rem; top:.6rem; width:0; height:0; border-bottom:.5rem solid #17C624; border-top:.5rem solid transparent; border-left:.5rem solid #17C624; border-right:.5rem solid transparent; transform:rotate(180deg);}
-
-      .fixed-box {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 10;
-      }
-      .fixed-box button {
-        width:100%;
-        padding: 2rem;
-        font-weight: 700;
-        font-size: 1.4rem;
-        background: #CFCFDA;
-        color:#fff;
-        cursor:default;
-        outline:none;
-        border:0;
-      }
-      .fixed-box button:disabled{cursor:default;}
-      .fixed-box button.active{background-color:#ff6000; cursor:pointer;}
-      .fixed-box button.correct-active::before{content:'정답!'; display:inline-block; margin-right:.3rem; color:#17C624;}
+    @media screen and (max-width:1024px) {
+        body{max-height:100vh; overflow:hidden;}
+        .landing {max-height:100vh; max-width: 100%; padding:0 1rem; box-sizing:border-box; overflow-x:hidden;}
+        .quiz-col .rest-box{margin-bottom:2em;}
+        .quiz-col .rest-box .progress-bar{ height:.2rem; margin-bottom:1rem;}
+        .quiz-col .rest-box em{font-size:1.2rem; text-shadow:.1rem .1rem #ffc000;}
+        .quiz-col .quiz-box{padding:1.6rem .85rem; border-radius:.4rem; border:.25rem solid #ffc000;}
+        .quiz-col .quiz-box em{padding:.15rem .4rem; font-size:.8rem; border-radius:.1rem;}
+        .quiz-col .quiz-box strong{margin-top:1.2rem; font-size:1rem;}
+        .quiz-col .quiz-box p{margin-top:.4rem; font-size:1rem;}
+        .quiz-col .answer-box{margin-top:1.6rem;}
+        .quiz-col .answer-box span{height:2.4rem; line-height:2.4em;}
+        .quiz-col .answer-box span + span{margin-top:.8rem;}
+        .quiz-col .answer-box label{font-size:.8rem; border-radius:.2rem; line-height:2.5rem;}
+        .fixed-box button { height:4rem ;font-size: 1.2rem; line-height:4rem; }
+        .fixed-box button.active{border:.15rem solid #ffc000;  box-shadow:inset .1rem .1rem .25rem #ddd;}
+        .fixed-box button.correct-active::before{margin-right:.3rem;}
+        }
     </style>
+    <div class="bg_star">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <section class="landing gnb-none">
       <div class="quiz-col">
         <div class="inner-col">
@@ -172,7 +183,7 @@
                 answer: 0
             },
             {
-                question: `별 그대 가사 중 빈칸에 들어갈 가사는? 어두운 밤이 지나도 별은 아직 거기 있네요 () 내겐 너무 좋았습니다`,
+                question: `별 그대 가사 중 빈칸에 들어갈 가사는? 어두운 밤이 지나도 별은 아직 거기 있네요 (___) 내겐 너무 좋았습니다`,
                 choices: ["사나운 바람도 불던 날도","우리 함께 오른 그 언덕길이", "나만을 밝혀주는 그대라는 별","따뜻하게 내 이름 불러준 당신"],
                 answer: 1
             },
@@ -237,17 +248,19 @@
             const formCheck = radio.closest('.form-check');
             btnAnswer.disabled = false; 
             btnAnswer.classList.add('active');
-            btnAnswer.textContent  = '다음문제를 풀어보세요';
+            
             inputRadio.forEach(radio => radio.disabled = true);
 
             let selectedIndex = Array.from(inputRadio).findIndex(radio => radio.checked);
 
             if (selectedIndex === quizData[answer].answer) {
                 formCheck.classList.add('correct');
+                btnAnswer.textContent  = '희재력 + 1';
                 document.querySelector('.btn-answer').classList.add('correct-active');
                 correctCount++;
             } else {
                 formCheck.classList.add('wrong');
+                btnAnswer.textContent  = '희재력 - 1';
                 document.querySelectorAll('.form-check')[quizData[answer].answer].classList.add('correct-answer');
             }
         }));
@@ -263,7 +276,7 @@
 
             if (answer === quizData.length) {
                 document.querySelector('.quiz-box').innerHTML = '';
-                document.querySelector('.quiz-box').innerHTML += '<p>문제 풀이 완료</p>'
+                document.querySelector('.quiz-box').innerHTML += `<p>${quizData.length} 희재력 중 당신은 +${correctCount} 희재력!</p>`
                 btnAnswer.textContent = '문제 풀이 완료'
                 document.querySelector('#remainQuestion').textContent = 0;
                 document.querySelector('.btn-answer').classList.remove('correct-active');
@@ -285,7 +298,6 @@
             inputRadio = document.querySelectorAll('input[type=radio][name=question]');
             inputRadio.forEach(radio => radio.addEventListener('change', () => {
                 document.querySelector('.btn-answer').classList.add('active')
-                btnAnswer.textContent  = '다음문제를 풀어보세요';
                 const formCheck = radio.closest('.form-check');
                 document.querySelector('.btn-answer').classList.add('active');
                 inputRadio.forEach(radio => radio.disabled = true);
@@ -294,10 +306,12 @@
 
                 if (selectedIndex === quizData[answer].answer) {
                     formCheck.classList.add('correct');
+                    btnAnswer.textContent  = '희재력 + 1';
                     document.querySelector('.btn-answer').classList.add('correct-active');
                     correctCount++;
                 } else {
                     formCheck.classList.add('wrong');
+                    btnAnswer.textContent  = '희재력 - 1';
                     document.querySelectorAll('.form-check')[quizData[answer].answer].classList.add('correct-answer');
                 }
             }));
