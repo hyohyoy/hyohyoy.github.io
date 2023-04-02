@@ -105,10 +105,10 @@
     .quiz-col .answer-box span.wrong input[type="radio"] + label{color:#FF5647; border-color:#FF5647;}
 
     .fixed-box {position: fixed; bottom: 0; left: 0; right: 0; z-index: 10; }
-    .fixed-box button {width:100%; height:6rem; font-weight: 700; font-size: 1.6rem; line-height:6rem; background: #dfdfdf; color:#fff; cursor:default; outline:none; border:0; box-sizing:border-box; font-family: 'NeoDunggeunmoPro-Regular'; }
+    .fixed-box button {width:100%; height:4rem; font-weight: 700; font-size: 1.4rem; line-height:4rem; background: #dfdfdf; color:#fff; cursor:default; outline:none; border:0; box-sizing:border-box; font-family: 'NeoDunggeunmoPro-Regular'; }
     .fixed-box button:disabled{cursor:default;}
-    .fixed-box button.active{background-color:#fff; cursor:pointer; border:.3rem solid #ffc000; color:#000; box-shadow:inset .2rem .2rem .5rem #ddd;}
-    .fixed-box button.correct-active::before{content:'정답!'; display:inline-block; margin-right:.3rem; color:#17C624;}
+    .fixed-box button.active{background-color:#fff; cursor:pointer; background-color: #ffc000; color:#000;}
+    .fixed-box button.correct-active::before{content:'정답!'; display:inline-block; margin-right:.3rem; color:#25c225;}
 
     @media screen and (max-width:1024px) {
         body{max-height:100vh; overflow:hidden;}
@@ -125,7 +125,6 @@
         .quiz-col .answer-box span + span{margin-top:.8rem;}
         .quiz-col .answer-box label{font-size:1.4em; border-radius:.2rem; line-height:2.5rem;}
         .fixed-box button { height:4rem ;font-size: 1.2rem; line-height:4rem; }
-        .fixed-box button.active{border:.15rem solid #ffc000;  box-shadow:inset .1rem .1rem .25rem #ddd;}
         .fixed-box button.correct-active::before{margin-right:.3rem;}
     }
     @media screen and (max-width:750px){
