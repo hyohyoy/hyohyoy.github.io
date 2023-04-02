@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>온라인학습지 템플릿</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="shortcut icon" href="https://english.yanadoocdn.com/upload/yanadoo/new/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="https://english.yanadoocdn.com/upload/yanadoo/new/common/favicon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+</head>
+
+  <body>
+    <header></header>
+    <style>
+    /* 초기화 */
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    input[type=radio]{display:none;}
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    @font-face {
+        font-family: 'NeoDunggeunmoPro-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+      body {
+        background-color: #0c143b;
+        font-family: 'NeoDunggeunmoPro-Regular';
+        font-size: 10px;
+     }
+
+      .landing {
+        display: block;
+        position: relative;
+        max-width: 40rem;
+        margin: 0 auto;
+        text-align:center;
+        overflow: hidden;
+      }
+
+
+     .quiz-col{padding:2rem 0;}
+     .quiz-col .rest-box{margin-bottom:3.2rem;}
+     .quiz-col .rest-box .progress-bar{width:100%; height:.4rem; margin-bottom:3rem; background-color:#ECECF6;}
+     .quiz-col .rest-box .progress-bar span{display:block; width:0%; height:100%; background-color:#ff6000; transition:1s all linear;}
+     .quiz-col .rest-box em{font-size:2.2rem; color:#fff; text-shadow:.2rem .2rem #f500d0;}
+     .quiz-col .quiz-box{padding:3.2rem 1.9rem; background-color:#fff; box-shadow:0 0 1rem rgba(0,0,0,0.1); border-radius:1.2rem;}
+     .quiz-col .quiz-box em{display:inline-block; padding:.3rem .8rem; font-size:1rem; color:#fff; background-color:#59AFFF; border-radius:.2rem;}
+     .quiz-col .quiz-box strong{display:block; margin-top:2.4rem; font-size:2rem; word-break:keep-all;}
+     .quiz-col .quiz-box p{margin-top:.8rem; font-size:2rem; color:#717188;}
+     .quiz-col .answer-box{margin-top:3.2rem;}
+     .quiz-col .answer-box span{display:block; width:100%; height:4.8rem; line-height:4.8rem; box-sizing:border-box;}
+     .quiz-col .answer-box span + span{margin-top:1.6rem;}
+     .quiz-col .answer-box label{display:block; position:relative; width:100%; height:100%; font-size:1.6rem; border:1px solid #DFDFEA; border-radius:2rem;  cursor:pointer;}
+     .quiz-col .answer-box span input[type="radio"]:checked + label{font-weight:700; border-color:#28284B;}
+     .quiz-col .answer-box span.correct input[type="radio"] + label, .quiz-col .answer-box span.correct-answer input[type="radio"] + label{color:#17C624; border-color:#17C624;}
+     .quiz-col .answer-box span.wrong input[type="radio"] + label{color:#FF5647; border-color:#FF5647;}
+     .quiz-col .answer-box span.correct-answer input[type="radio"] + label::after{content:'정답을 확인해 보세요'; position:absolute; left:0; top:-.9rem; width:10.4rem; height:1.8rem; font-size:1rem; line-height:1.8rem; color:#fff; background-color:#17C624; border-radius:1rem;}
+     .quiz-col .answer-box span.correct-answer input[type="radio"] + label::before{content:''; position:absolute; left:2rem; top:.6rem; width:0; height:0; border-bottom:.5rem solid #17C624; border-top:.5rem solid transparent; border-left:.5rem solid #17C624; border-right:.5rem solid transparent; transform:rotate(180deg);}
+
+      .fixed-box {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+      }
+      .fixed-box button {
+        width:100%;
+        padding: 2rem;
+        font-weight: 700;
+        font-size: 1.4rem;
+        background: #CFCFDA;
+        color:#fff;
+        cursor:default;
+        outline:none;
+        border:0;
+      }
+      .fixed-box button:disabled{cursor:default;}
+      .fixed-box button.active{background-color:#ff6000; cursor:pointer;}
+      .fixed-box button.correct-active::before{content:'정답!'; display:inline-block; margin-right:.3rem; color:#17C624;}
+    </style>
+    <section class="landing gnb-none">
+      <div class="quiz-col">
+        <div class="inner-col">
+            <div class="rest-box">
+                <div class="progress-bar">
+                    <span class="progress"></span>
+                </div>
+                <em>총 <span id="totalQuestion"></span>문제 중 <span id="remainQuestion"></span>문제가 남았어요!</em>
+            </div>
+          <div class="quiz-box">
+            <em>Question <span id="questionNum"></span></em>
+            <strong id="question"></strong>
+            <div class="answer-box" id="answerBox"></div>
+          </div>
+        </div>
+      </div>
+      <div class="fixed-box">
+        <button type="button" class="btn-answer check-answer">정답 확인하기</button>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+        const quizData = [
+            {
+                question: "희재의 생년월일은 언제일까요?",
+                choices: ["1995/06/09", "1995/10/03", "1997/06/09", "1997/10/03"],
+                answer: 0
+            },
+            {
+                question: "희재의 공식데뷔일은 언제일까요?",
+                choices: ["2020/03/10","2020/03/11", "2020/03/12","2020/03/13"],
+                answer: 2
+            },
+            {
+                question: "희재 이름의 한자와 훈음은 무엇일까요?",
+                choices: ["喜渽(기쁠 희 맑을 재)","熙栽(빛날 희 심을 재)", "喜栽(기쁠 희 심을 재)", "熙渽(빛날 희 맑을 재)"],
+                answer: 1
+            },
+            {
+                question: "희재의 첫 정규앨범인 '희재'에 수록되지 않은 곡은?",
+                choices: ["따라따라와", "꽃이 필때 그대에게 가겠소", "당신만이", "풍악"],
+                answer: 0
+            },
+            {
+                question: `별 그대 가사 중 빈칸에 들어갈 가사는? 어두운 밤이 지나도 별은 아직 거기 있네요 () 내겐 너무 좋았습니다`,
+                choices: ["사나운 바람도 불던 날도","우리 함께 오른 그 언덕길이", "나만을 밝혀주는 그대라는 별","따뜻하게 내 이름 불러준 당신"],
+                answer: 1
+            },
+            {
+                question: "희재가 고른 밸런스 게임 보기는?",
+                choices: ["낮에 단둘이 이성친구와 술 마시는 애인", "밤에 단둘이 이성친구와 커피 마시는 애인"],
+                answer: 1
+            },
+            {
+                question: "희재의 팬콘서트 ‘별, 그대’ 서울 앵콜 콘서트 중 앵콜로 부른 마지막 곡은?",
+                choices: ["잊지 말아요","나는 남자다", "너를 만나서", "어느 멋진 날"],
+                answer: 3
+            },
+            {
+                question: "희재가 다섯 글자로 표현한 희랑별은?",
+                choices: ["나의 전부야", "나의 자랑들", "나의 모든 것", "영원히 함께"],
+                answer: 0
+            },
+            {
+                question: "희재가 좋아하는 날씨는?",
+                choices: ["구름 한점없이 맑은 날","비가 주륵주륵 오는 날", "펑펑 눈이 오는 날","날이 흐려 시원한 날"],
+                answer: 1
+            },
+            {
+                question: "희재가 고등학생 때 출연한 전국노래자랑 지역은?",
+                choices: ["팔도명물총집합편","울산 중구 편", "경북 구미 편", "서울 성동구 편"],
+                answer: 3
+            },
+        ];
+
+
+    $(function(){
+        let progressBar = document.querySelector('.progress');
+        let prgressValue = 0;
+        
+        let answer = 0;  
+        let correctCount = 0;
+        let questionNum = document.querySelector('#questionNum')
+        let question = document.querySelector('#question');
+        let answerBox = document.querySelector('#answerBox');
+        let btnAnswer  = document.querySelector('.btn-answer');
+
+        btnAnswer.disabled = true;
+        question.innerHTML = quizData[0].question;
+        questionNum.textContent = answer + 1;
+        document.querySelector('#totalQuestion').textContent = quizData.length;
+        document.querySelector('#remainQuestion').textContent = quizData.length - answer;
+        
+        for(let i = 0; i<quizData[0].choices.length; i++) {
+            answerBox.innerHTML += '<span class="form-check"><input class="form-check-input" type="radio" name="question" id="question-'+i+'"><label for="question-'+i+'">'+quizData[0].choices[i]+'</label></span>';
+            
+            if(quizData[0].choices[i] === quizData[0].answer){
+                alert('lkj')
+            }
+            // console.log(quizData[0].answer)
+        }
+
+
+    
+        let inputRadio = document.querySelectorAll('input[type=radio][name=question]');
+        inputRadio.forEach(radio => radio.addEventListener('change', () => {
+            const formCheck = radio.closest('.form-check');
+            btnAnswer.disabled = false; 
+            btnAnswer.classList.add('active');
+            btnAnswer.textContent  = '다음문제를 풀어보세요';
+            inputRadio.forEach(radio => radio.disabled = true);
+
+            let selectedIndex = Array.from(inputRadio).findIndex(radio => radio.checked);
+
+            if (selectedIndex === quizData[answer].answer) {
+                formCheck.classList.add('correct');
+                document.querySelector('.btn-answer').classList.add('correct-active');
+                correctCount++;
+            } else {
+                formCheck.classList.add('wrong');
+                document.querySelectorAll('.form-check')[quizData[answer].answer].classList.add('correct-answer');
+            }
+        }));
+        
+
+        btnAnswer.addEventListener('click',function(){
+            if (!document.querySelector('input[name=question]:checked')) {
+                return;
+            }
+
+            answer ++;
+            answerBox.innerHTML = '';
+
+            if (answer === quizData.length) {
+                document.querySelector('.quiz-box').innerHTML = '';
+                document.querySelector('.quiz-box').innerHTML += '<p>문제 풀이 완료</p>'
+                btnAnswer.textContent = '문제 풀이 완료'
+                document.querySelector('#remainQuestion').textContent = 0;
+                document.querySelector('.btn-answer').classList.remove('correct-active');
+               
+                alert(`총 ${quizData.length}문제 중 ${correctCount}문제를 맞췄습니다!`);
+
+                return;
+            }
+
+            questionNum.textContent = answer + 1;
+
+            question.innerHTML = quizData[answer].question;
+            document.querySelector('#remainQuestion').textContent = quizData.length - answer;
+
+            for(let i = 0; i<quizData[answer].choices.length; i++) {
+                answerBox.innerHTML += '<span class="form-check"><input class="form-check-input" type="radio" name="question" id="question-'+i+'"><label for="question-'+i+'">'+quizData[answer].choices[i]+'</label></span>';
+            }
+
+            inputRadio = document.querySelectorAll('input[type=radio][name=question]');
+            inputRadio.forEach(radio => radio.addEventListener('change', () => {
+                document.querySelector('.btn-answer').classList.add('active')
+                btnAnswer.textContent  = '다음문제를 풀어보세요';
+                const formCheck = radio.closest('.form-check');
+                document.querySelector('.btn-answer').classList.add('active');
+                inputRadio.forEach(radio => radio.disabled = true);
+
+                let selectedIndex = Array.from(inputRadio).findIndex(radio => radio.checked);
+
+                if (selectedIndex === quizData[answer].answer) {
+                    formCheck.classList.add('correct');
+                    document.querySelector('.btn-answer').classList.add('correct-active');
+                    correctCount++;
+                } else {
+                    formCheck.classList.add('wrong');
+                    document.querySelectorAll('.form-check')[quizData[answer].answer].classList.add('correct-answer');
+                }
+            }));
+
+            btnAnswer.textContent  = '정답 확인하기';
+            document.querySelector('.btn-answer').classList.remove('correct-active');
+            document.querySelector('.btn-answer').classList.remove('active');
+
+            progressValue = answer / (quizData.length - 1) * 100;
+            progressBar.style.width = progressValue + '%';
+            
+        });
+
+    })
+     
+    </script>
+  </body>
+</html>
