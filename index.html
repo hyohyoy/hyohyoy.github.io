@@ -95,6 +95,7 @@
     .quiz-col .quiz-box em{display:inline-block; padding:.3rem .8rem; font-size:1.4rem; color:#fff; background-color:#FF5647; border-radius:.2rem;}
     .quiz-col .quiz-box strong{display:block; margin-top:2.4rem; font-size:2rem; word-break:keep-all;}
     .quiz-col .quiz-box p{margin-top:.8rem; font-size:2rem; color:#717188;}
+    .quiz-col .quiz-box img{display:inline-block; max-width:80%;}
     .quiz-col .answer-box{margin-top:3.2rem;}
     .quiz-col .answer-box span{display:block; width:100%;box-sizing:border-box;}
     .quiz-col .answer-box span + span{margin-top:1.6rem;}
@@ -150,6 +151,7 @@
                     <span class="progress"></span>
                 </div>
                 <em>총 <span id="totalQuestion"></span>문제 중 <span id="remainQuestion"></span>문제가 남았어요!</em>
+                
             </div>
           <div class="quiz-box">
             <em>Question <span id="questionNum"></span></em>
@@ -186,7 +188,7 @@
                 answer: 0
             },
             {
-                question: `별 그대 가사 중 빈칸에 들어갈 가사는? 어두운 밤이 지나도 별은 아직 거기 있네요 (___) 내겐 너무 좋았습니다`,
+                question: `별 그대 가사 중 빈칸에 들어갈 가사는?<br><br>어두운 밤이 지나도<br> 별은 아직 거기 있네요<br>(______________________)<br> 내겐 너무 좋았습니다`,
                 choices: ["사나운 바람도 불던 날도","우리 함께 오른 그 언덕길이", "나만을 밝혀주는 그대라는 별","따뜻하게 내 이름 불러준 당신"],
                 answer: 1
             },
@@ -196,7 +198,7 @@
                 answer: 1
             },
             {
-                question: "희재의 팬콘서트 ‘별, 그대’ 서울 앵콜 콘서트 중 앵콜로 부른 마지막 곡은?",
+                question: "희재의 팬콘서트 ‘별, 그대’ <br>서울 앵콜 콘서트 중 <br>앵콜로 부른 마지막 곡은?",
                 choices: ["잊지 말아요","나는 남자다", "너를 만나서", "어느 멋진 날"],
                 answer: 3
             },
@@ -207,7 +209,7 @@
             },
             {
                 question: "희재가 좋아하는 날씨는?",
-                choices: ["구름 한점없이 맑은 날","비가 주륵주륵 오는 날", "펑펑 눈이 오는 날","날이 흐려 시원한 날"],
+                choices: ["구름 한점없이 맑은 날","비가 주룩주룩 오는 날", "펑펑 눈이 오는 날","날이 흐려 시원한 날"],
                 answer: 1
             },
             {
@@ -279,7 +281,7 @@
 
             if (answer === quizData.length) {
                 document.querySelector('.quiz-box').innerHTML = '';
-                document.querySelector('.quiz-box').innerHTML += `<p>${quizData.length} 희재력 중 당신은 +${correctCount} 희재력!</p>`
+                document.querySelector('.quiz-box').innerHTML += `<p>${quizData.length} 희재력 중 당신은 +${correctCount} 희재력!</p> <br> <img src="https://hyohyoy.github.io/images/heejae_finish.png" alt="">`
                 btnAnswer.textContent = '문제 풀이 완료'
                 document.querySelector('#remainQuestion').textContent = 0;
                 document.querySelector('.btn-answer').classList.remove('correct-active');
