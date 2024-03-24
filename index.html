@@ -1,374 +1,240 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <title>희재력 테스트</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="shortcut icon" href="https://hyohyoy.github.io/images/orange_heart.png" />  
-    <link rel="apple-touch-icon" href="https://hyohyoy.github.io/images/orange_heart.png" />
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="희재력 테스트">
-    <meta property="og:image" content="https://hyohyoy.github.io/images/heejae_og.png">
-    <meta property="og:description" content="희재에 대해 맞혀보아요🧡">
-    <meta property="og:site_name" content="우리 희재는요~">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정효경 | 웹퍼블리셔 포트폴리오</title>
+
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/script.js"></script>
+
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
-  <body>
-    <header></header>
-    <style>
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center,
-    dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, embed, 
-    figure, figcaption, footer, header, hgroup, 
-    menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-    }
-    article, aside, details, figcaption, figure, 
-    footer, header, hgroup, menu, nav, section {
-        display: block;
-    }
-    body {
-        line-height: 1;
-    }
-    ol, ul {
-        list-style: none;
-    }
-    blockquote, q {
-        quotes: none;
-    }
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-        content: '';
-        content: none;
-    }
-    input[type=radio]{display:none;}
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-    @font-face {
-        font-family: 'NeoDunggeunmoPro-Regular';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
-        font-weight: normal;
-        font-style: normal;
-    }
-    body {background:#000; max-width:100%; font-family: 'NeoDunggeunmoPro-Regular'; font-size: 10px;}
-    .landing {display: block; position: relative; max-width: 40rem; margin: 0 auto; text-align:center; overflow: hidden; }
-    .bg_star span{display:block; position:fixed; width:2rem; height:2rem; background:url(/images/ico_star.png) no-repeat 50%/100%; animation:blink 1s infinite;}
-    .bg_star span:nth-child(1){left:5rem; top:5em;}
-    .bg_star span:nth-child(2){left:10rem; top:50rem; animation-delay:.1s;}
-    .bg_star span:nth-child(3){right:8rem; top:49rem; animation-delay:.2s;}
-    .bg_star span:nth-child(4){right:5rem; top:10rem; animation-delay:.3s;}
-    .bg_star span:nth-child(5){left:20rem; top:32rem; animation-delay:.4s;}
-    .bg_star span:nth-child(6){left:10rem; top:18rem; animation-delay:.5s;}
-    .bg_star span:nth-child(7){left:34rem; top:54rem; animation-delay:.6s;}
-    .bg_star span:nth-child(8){right:15rem; top:28rem; animation-delay:.7s;}
-    .bg_star span:nth-child(9){right:34rem; top:52rem; animation-delay:.8s;}
-    @keyframes blink{
-        0%,100%{opacity:0;}
-        50%,90%{opacity:1;}
-    }
-    .quiz-col{padding:2rem 0;}
-    .quiz-col .start-box{position:relative; background-color:#fff; border-radius:.4rem; padding:2rem 4rem;}
-    .quiz-col .start-box::before{content:'희랑별'; left:3rem; top:18rem; position:absolute; background-color:#fff; color:#000; padding:1rem; font-size:2rem; box-shadow:-.1rem .1rem .1rem #000; border-radius:1rem; z-index:5; animation:fadeUp .5s linear forwards; opacity:0;}
-    .quiz-col .start-box::after{content:'풀어볼래요?'; right:2rem; top:27rem; position:absolute; background-color:#fff; color:#000; padding:1rem; font-size:2rem; box-shadow:.1rem .1rem .1rem #000; border-radius:1rem; z-index:5; animation:fadeUp .5s 1s linear forwards; opacity:0;}
-    @keyframes fadeUp {
-        from{transform:translateY(50%);}
-        to{transform:translateY(0); opacity:1;}
-    }
-    .quiz-col .start-box h3{font-size:3rem; color:#FF5647;}
-    .quiz-col .start-box img{display:block; max-width:100%; margin:2rem auto; border-radius:.4rem;}
-    .quiz-col .start-btn{width:100%; padding:1.4rem 0; background-color:#FF5647; font-family: 'NeoDunggeunmoPro-Regular'; font-size:1.4rem; color:#fff; border:0; border-radius:.4rem;}
-    .quiz-col .quiz-start{display:none;}
-    .quiz-col .rest-box{margin-bottom:3.2rem;}
-    .quiz-col .rest-box .progress-bar{width:100%; height:.4rem; margin-bottom:3rem; background-color:#ECECF6;}
-    .quiz-col .rest-box .progress-bar span{display:block; width:0%; height:100%; background-color:#ff6000; transition:1s all linear;}
-    .quiz-col .rest-box em{font-size:2.2rem; color:#fff; text-shadow:.2rem .2rem #ffc000;}
-    .quiz-col .quiz-box{padding:1.4rem 1.9rem; background-color:#fff; box-shadow:0 0 1rem rgba(0,0,0,0.1); border-radius:.8rem; border:.5rem solid #ffc000;}
-    .quiz-col .quiz-box em{display:inline-block; padding:.3rem .8rem; font-size:1.4rem; color:#fff; background-color:#FF5647; border-radius:.2rem;}
-    .quiz-col .quiz-box strong{display:block; margin-top:2.4rem; font-size:1.6rem; word-break:keep-all;}
-    .quiz-col .quiz-box p{margin-top:.8rem; font-size:2rem; color:#717188;}
-    .quiz-col .quiz-box img{display:inline-block; max-width:80%; margin:1rem 0;}
-    .quiz-col .answer-box{margin-top:3.2rem;}
-    .quiz-col .answer-box span{display:block; width:100%;box-sizing:border-box;}
-    .quiz-col .answer-box span + span{margin-top:1.6rem;}
-    .quiz-col .answer-box label{display:block; position:relative; width:100%; height:100%; padding:1rem 0; font-size:1.4rem; border:1px solid #DFDFEA; border-radius:.4rem;  cursor:pointer;}
-    .quiz-col .answer-box span input[type="radio"]:checked + label{font-weight:700; border-color:#28284B;}
-    .quiz-col .answer-box span.correct input[type="radio"] + label, .quiz-col .answer-box span.correct-answer input[type="radio"] + label{color:#17C624; border-color:#17C624;}
-    .quiz-col .answer-box span.wrong input[type="radio"] + label{color:#FF5647; border-color:#FF5647;}
-
-    .fixed-box {display:none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 10; }
-    .fixed-box button {width:100%; height:4rem; font-weight: 700; font-size: 1.4rem; line-height:4rem; background: #dfdfdf; color:#fff; cursor:default; outline:none; border:0; box-sizing:border-box; font-family: 'NeoDunggeunmoPro-Regular'; }
-    .fixed-box button:disabled{cursor:default;}
-    .fixed-box button.active{background-color:#fff; cursor:pointer; background-color: #ffc000; color:#000;}
-    .fixed-box button.correct-active::before{content:'정답!'; display:inline-block; margin-right:.3rem; color:#25c225;}
-
-    .landing.active .quiz-start, .landing.active .fixed-box{display:block;}
-    .landing.active .start-box{display:none;}
-
-    @media screen and (max-width:1024px) {
-        body{max-height:100vh; overflow:hidden;}
-        .landing {max-height:100vh; max-width: 100%; padding:0 1rem; font-size:21px; box-sizing:border-box; overflow-x:hidden;}
-        .quiz-col .start-box{max-height:100%; border-radius:.2em; padding:2em 5em;}
-        .quiz-col .start-box::before{left:3em; top:10em; padding:.5em; font-size:1.5em; border-radius:.2em;}
-        .quiz-col .start-box::after{right:3em; top:15em; padding:.5em; font-size:1.5em; border-radius:.2em;}
-        .quiz-col .start-box h3{font-size:2.8em;}
-        .quiz-col .start-box img{margin:1.5em auto; width:20em; border-radius:.2em;}
-        .quiz-col .start-btn{padding:.8em 0; max-width:10.5em; font-size:2em; border-radius:.2em;}
-        .quiz-col .quiz-box .start-btn{max-width:12em;}
-        .quiz-col .rest-box{margin-bottom:2em;}
-        .quiz-col .rest-box .progress-bar{ height:.2rem; margin-bottom:1rem;}
-        .quiz-col .rest-box em{font-size:2em; text-shadow:.1rem .1rem #ffc000;}
-        .quiz-col .quiz-box{padding:1.6rem .85rem; border-radius:.4rem; border:.25rem solid #ffc000;}
-        .quiz-col .quiz-box em{padding:.15rem .4rem; font-size:.8rem; border-radius:.1rem;}
-        .quiz-col .quiz-box strong{margin-top:1.2rem; font-size:1.8em;}
-        .quiz-col .quiz-box p{margin-top:.4rem; font-size:2em;}
-        .quiz-col .quiz-box img{margin:1em 0;}
-        .quiz-col .answer-box{margin-top:1.6rem;}
-        .quiz-col .answer-box span + span{margin-top:.8rem;}
-        .quiz-col .answer-box label{font-size:1.4em; border-radius:.2rem; line-height:1em;}
-        .fixed-box button { height:4rem ;font-size: 1.2rem; line-height:4rem; }
-        .fixed-box button.correct-active::before{margin-right:.3rem;}
-    }
-    @media screen and (max-width:750px){
-        .landing{font-size:2.8vw;}
-    }
-    </style>
-    <section class="landing">
-        <div class="bg_star">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-      <div class="quiz-col">
-        <div class="inner-col">
-            <div class="start-box">
-                <h3>희재력 테스트 ver.1</h3>
-                <img src="https://hyohyoy.github.io/images/heejae_start.jpg" alt="김희재 사진">
-                <!-- <img src="/images/heejae_start.jpg" alt=""> -->
-                <button type="button" class="start-btn" onclick="quizShow();">테스트 시작하기</button>
+<body>
+    <div class="wrap" id="wrap">
+        <header>
+            <div class="inner-col">
+                <a href="#" class="logo">
+                    <img src="images/logo_new.png" alt="정효경 포트폴리오">
+                </a>
+                <ul class="gnb">
+                    <li data-section="home"><a href="#">HOME</a></li>
+                    <li data-section="about"><a href="#">ABOUT</a></li>
+                    <li data-section="portfolio"><a href="#">PORTFOLIO</a></li>
+                    <li data-section="contact"><a href="#">CONTACT</a></li>
+                </ul>
             </div>
-            <div class="quiz-start">
-                <div class="rest-box">
-                    <div class="progress-bar">
-                        <span class="progress"></span>
-                    </div>
-                    <em>총 <span id="totalQuestion"></span>문제 중 <span id="remainQuestion"></span>문제가 남았어요!</em>
-                    
-                </div>
-                <div class="quiz-box">
-                    <em>Question <span id="questionNum"></span></em>
-                    <strong id="question"></strong>
-                    <div class="answer-box" id="answerBox"></div>
+        </header>
+        <section class="banner-col" id="home">
+            <div class="inner-col">
+                <div class="text-box">
+                    <h2 class="text"></h2><h2 class="blink">|</h2>
                 </div>
             </div>
-        </div>
-      </div>
-      <div class="fixed-box">
-        <button type="button" class="btn-answer check-answer">정답 확인하기</button>
-      </div>
-    </section>
+        </section>
+        <section class="about-col" id="about">
+            <div class="inner-col">
+                <h2>ABOUT</h2>
+                <ul class="txt-box">
+                    <li>
+                        <h3>PROFILE</h3>
+                        <p>- 정효경 / 인천광역시 거주</p>
+                        <p>- 1997.10.03</p>
+                        <p>- gyrud1003@kakao.com</p>
+                    </li>
+                    <li>
+                        <h3>CERTIFICATE</h3>
+                        <p>- 2021.01 GTQ 그래픽기술자격 1급</p>
+                        <p>- 2020.12 웹디자인기능사 자격증</p>
+                        <p>- 2020.05 HSK 5급</p>
+                    </li>
+                    <li>
+                        <h3>HISTORY</h3>
+                        <p>- 2020.09 ~ 2021.01<br>
+                            더조은컴퓨터아카데미 UI/UX 웹디자인 실무자 양성<br>
+                            (프론트엔드, 웹퍼블리셔) 과정 수료
+                        </p>
+                        <p>-2016.03 ~ 2020.02 <br>공주대학교 중어중문학과 졸업</p>
+                    </li>
+                </ul>
+                <ul class="about-list">
+                    <li>
+                        <em>2020.03 ~ 2020.10</em>
+                        <h3>AK웹서비스 | <span>웹 에이전시 / 퍼블리싱팀</span></h3>
+                        <p>포토샵 시안으로 cafe24, 그누보드, 영카트 환경에서 UI 마크업을 진행하였습니다.</p>
+                        <div class="skill-box">
+                            <h4>[주요 기술 및 세팅 환경]</h4>
+                            <p>HTML 3 &middot; CSS3 &middot; jQuery &middot; javascript &middot; PHP &middot; vscode &middot; PHPstorm
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <em>2020.12 ~ 2023.10</em>
+                        <h3>(주)야나두 | <span>커머스_개발_프론트엔드팀</span></h3>
+                        <p>FIGMA 및 포토샵 시안으로 git 환경에서 야나두 프로모션 페이지 및 프론트 서비스 UI 마크업을 진행하였습니다. <br> 또한 폐쇄몰 환경에서의 대학생몰, 군인몰, 일반 회사 등의 B2B 서비스 유지보수 또한 진행하였습니다.</p>
+                        <div class="skill-box">
+                            <h4>[주요 기술 및 세팅 환경]</h4>
+                            <p>HTML 3 &middot; CSS3 &middot; jQuery &middot; javascript &middot; react &middot; GIT &middot;  sourceTree &middot; vscode &middot; IntelliJ &middot; JIRA &middot; Coufluence
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="portfolio-col" id="portfolio">
+            <div class="inner-col">
+               <h2>PORTFOLIO</h2>
+               <ul class="port-list">
+                    <li>
+                        <div class="img-area">
+                            <a href="https://clzls1.iwinv.net/" target="_blank">
+                                <img src="images/chicken_plus_landing.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textArea">
+                            <h3>#1 치킨플러스 랜딩페이지</h3>
+                            <p>적응형, PUBLISHING 100%</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-area">
+                            <a href="https://clzls2.iwinv.net/" target="_blank">
+                                <img src="images/chicken_plus.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="textArea">
+                            <h3>#2 치킨플러스</h3>
+                            <p>적응형, PUBLISHING 100%</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-area">
+                            <a href="https://ricorso.co.kr/" target="_blank">
+                                <img src="images/ricorso.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textArea">
+                            <h3>#3 리꼬르소</h3>
+                            <p>적응형, CAFE24 100%</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-area">
+                            <a href="https://ehdwo1.iwinv.net" target="_blank">
+                                <img src="images/dongjae.png" alt="">
+                            </a>
+                            <a href="dongjae/index.html" target="_blank">
+                            	<img src="images/dongjae.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textArea">
+                            <h3>#8 동재공업</h3>
+                            <p>반응형 풀페이지, PUBLISHING 100%</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-area">
+                            <a href="https://awesometravel.co.kr/" target="_blank">
+                                <img src="images/awesome.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textArea">
+                            <h3>#13 어썸트래블</h3>
+                            <p>반응형, PUBLISHING 100%</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-area">
+                            <a href="https://awesometravel.co.kr/" target="_blank">
+                                <img src="images/img_10th.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textArea">
+                            <h3>야나두 | 평생수강 + iPad 10세대</h3>
+                            <p>반응형, PUBLISHING 100%</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-area">
+                            <a href="https://awesometravel.co.kr/" target="_blank">
+                                <img src="images/img_5th.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textArea">
+                            <h3>야나두 | 평생수강 + iPad air 5세대</h3>
+                            <p>반응형, PUBLISHING 100%</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-area">
+                            <a href="https://awesometravel.co.kr/" target="_blank">
+                                <img src="images/img_srr.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textArea">
+                            <h3>야나두 | 스르르 소개페이지</h3>
+                            <p>반응형, PUBLISHING 100%</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-area">
+                            <a href="https://awesometravel.co.kr/" target="_blank">
+                                <img src="images/img_front.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textArea">
+                            <h3>야나두 | 앞자리영어</h3>
+                            <p>반응형, PUBLISHING 100%</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-area">
+                            <a href="https://awesometravel.co.kr/" target="_blank">
+                                <img src="images/img_audio.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textArea">
+                            <h3>야나두 | 오디오영어</h3>
+                            <p>반응형, PUBLISHING 100%</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-area">
+                            <a href="https://awesometravel.co.kr/" target="_blank">
+                                <img src="images/img_real.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textArea">
+                            <h3>야나두 | 리얼스피킹</h3>
+                            <p>반응형, PUBLISHING 100%</p>
+                        </div>
+                    </li>
+               </ul>
+            </div>
+        </section>
+        <section class="contact-col" id="contact">
+            <div class="inner-col">
+                <h2>CONTACT</h2>
+                <strong>더 궁금한 점이 있으시다면?</strong>
+                <p>아래 메일로 메일 부탁 드립니다😊</p>
+                <a href="mailto:"gyrud1003@kakao.com<">gyrud1003@kakao.com</a>
+                <em>&copy;copyright JUNG HYOKYOUNG. All Right Reserved.</em>
+                <span>본 홈페이지는 포트폴리오용이며, 상업적 용도가 아님을 밝힙니다.</span>
+            </div>
+        </section>
+    </div>
 
-    <script type="text/javascript">
-        const quizData = [
-            {
-                question: "희재의 생년월일은 언제일까요?",
-                choices: ["1995/06/09", "1995/10/03", "1997/06/09", "1997/10/03"],
-                answer: 0
-            },
-            {
-                question: "희재의 공식데뷔일은 언제일까요?",
-                choices: ["2020/03/10","2020/03/11", "2020/03/12","2020/03/13"],
-                answer: 2
-            },
-            {
-                question: "희재 이름의 한자와 훈음은 무엇일까요?",
-                choices: ["喜渽(기쁠 희 맑을 재)","熙栽(빛날 희 심을 재)", "喜栽(기쁠 희 심을 재)", "熙渽(빛날 희 맑을 재)"],
-                answer: 1
-            },
-            {
-                question: "희재의 첫 정규앨범인 '희재'에 수록되지 않은 곡은?",
-                choices: ["따라따라와", "꽃이 필때 그대에게 가겠소", "당신만이", "풍악"],
-                answer: 0
-            },
-            {
-                question: `별 그대 가사 중 빈칸에 들어갈 가사는?<br><br>어두운 밤이 지나도<br> 별은 아직 거기 있네요<br>(______________________)<br> 내겐 너무 좋았습니다`,
-                choices: ["사나운 바람도 불던 날도","우리 함께 오른 그 언덕길이", "나만을 밝혀주는 그대라는 별","따뜻하게 내 이름 불러준 당신"],
-                answer: 1
-            },
-            {
-                question: "희재가 고른 밸런스 게임 보기는?",
-                choices: ["낮에 단둘이 이성친구와 술 마시는 애인", "밤에 단둘이 이성친구와 커피 마시는 애인"],
-                answer: 1
-            },
-            {
-                question: "희재의 팬콘서트 ‘별, 그대’ <br>서울 앵콜 콘서트 중 <br>앵콜로 부른 마지막 곡은?",
-                choices: ["잊지 말아요","나는 남자다", "너를 만나서", "어느 멋진 날"],
-                answer: 3
-            },
-            {
-                question: "희재가 다섯 글자로 표현한 희랑별은?",
-                choices: ["나의 전부야", "나의 자랑들", "나의 모든 것", "영원히 함께"],
-                answer: 0
-            },
-            {
-                question: "희재가 좋아하는 날씨는?",
-                choices: ["구름 한점없이 맑은 날","비가 주룩주룩 오는 날", "펑펑 눈이 오는 날","날이 흐려 시원한 날"],
-                answer: 1
-            },
-            {
-                question: "희재가 고등학생 때 출연한 전국노래자랑 지역은?",
-                choices: ["팔도명물총집합편","울산 중구 편", "경북 구미 편", "서울 성동구 편"],
-                answer: 3
-            },
-        ];
-
-
-        function quizShow(){
-            document.querySelector('.landing').classList.add('active')
-        }
-        function quizHide(){
-            document.querySelector('.landing').classList.remove('active')
-        }
-    $(function(){
-
-
-        let progressBar = document.querySelector('.progress');
-        let prgressValue = 0;
-        
-        let answer = 0;  
-        let correctCount = 0;
-        let questionNum = document.querySelector('#questionNum')
-        let question = document.querySelector('#question');
-        let answerBox = document.querySelector('#answerBox');
-        let btnAnswer  = document.querySelector('.btn-answer');
-
-        btnAnswer.disabled = true;
-        question.innerHTML = quizData[0].question;
-        questionNum.textContent = answer + 1;
-        document.querySelector('#totalQuestion').textContent = quizData.length;
-        document.querySelector('#remainQuestion').textContent = quizData.length - answer;
-        
-        for(let i = 0; i<quizData[0].choices.length; i++) {
-            answerBox.innerHTML += '<span class="form-check"><input class="form-check-input" type="radio" name="question" id="question-'+i+'"><label for="question-'+i+'">'+quizData[0].choices[i]+'</label></span>';
-            
-            if(quizData[0].choices[i] === quizData[0].answer){
-                alert('lkj')
-            }
-            // console.log(quizData[0].answer)
-        }
-
-
-    
-        let inputRadio = document.querySelectorAll('input[type=radio][name=question]');
-        inputRadio.forEach(radio => radio.addEventListener('change', () => {
-            const formCheck = radio.closest('.form-check');
-            btnAnswer.disabled = false; 
-            btnAnswer.classList.add('active');
-            
-            inputRadio.forEach(radio => radio.disabled = true);
-
-            let selectedIndex = Array.from(inputRadio).findIndex(radio => radio.checked);
-
-            if (selectedIndex === quizData[answer].answer) {
-                formCheck.classList.add('correct');
-                btnAnswer.textContent  = '희재력 + 1';
-                document.querySelector('.btn-answer').classList.add('correct-active');
-                correctCount++;
-            } else {
-                formCheck.classList.add('wrong');
-                btnAnswer.textContent  = '희재력 - 1';
-                document.querySelectorAll('.form-check')[quizData[answer].answer].classList.add('correct-answer');
-            }
-        }));
-        
-
-        btnAnswer.addEventListener('click',function(){
-            if (!document.querySelector('input[name=question]:checked')) {
-                return;
-            }
-
-            answer ++;
-            answerBox.innerHTML = '';
-
-            if (answer === quizData.length) {
-                document.querySelector('.quiz-box').innerHTML = '';
-                document.querySelector('.quiz-box').innerHTML += `<p>${quizData.length} 희재력 중 당신은 +${correctCount} 희재력!</p> <br> <img src="https://hyohyoy.github.io/images/heejae_finish.png" alt=""> <button type="button" class="start-btn" onclick="location.reload()">처음으로 돌아가기</button>`
-                btnAnswer.style.display = 'none'
-                document.querySelector('#remainQuestion').textContent = 0;
-                document.querySelector('.btn-answer').classList.remove('correct-active');
-                document.querySelector('.progress-bar').style.display = 'none';
-                document.querySelector('.quiz-col .rest-box em').style.display = 'none';
-               
-                alert(`총 ${quizData.length}문제 중 ${correctCount}문제를 맞췄습니다!`);
-
-                return;
-            }
-
-            questionNum.textContent = answer + 1;
-
-            question.innerHTML = quizData[answer].question;
-            document.querySelector('#remainQuestion').textContent = quizData.length - answer;
-
-            for(let i = 0; i<quizData[answer].choices.length; i++) {
-                answerBox.innerHTML += '<span class="form-check"><input class="form-check-input" type="radio" name="question" id="question-'+i+'"><label for="question-'+i+'">'+quizData[answer].choices[i]+'</label></span>';
-            }
-
-            inputRadio = document.querySelectorAll('input[type=radio][name=question]');
-            inputRadio.forEach(radio => radio.addEventListener('change', () => {
-                document.querySelector('.btn-answer').classList.add('active')
-                const formCheck = radio.closest('.form-check');
-                document.querySelector('.btn-answer').classList.add('active');
-                inputRadio.forEach(radio => radio.disabled = true);
-
-                let selectedIndex = Array.from(inputRadio).findIndex(radio => radio.checked);
-
-                if (selectedIndex === quizData[answer].answer) {
-                    formCheck.classList.add('correct');
-                    btnAnswer.textContent  = '희재력 + 1';
-                    document.querySelector('.btn-answer').classList.add('correct-active');
-                    correctCount++;
-                } else {
-                    formCheck.classList.add('wrong');
-                    btnAnswer.textContent  = '희재력 - 1';
-                    document.querySelectorAll('.form-check')[quizData[answer].answer].classList.add('correct-answer');
-                }
-            }));
-
-            btnAnswer.textContent  = '정답 확인하기';
-            document.querySelector('.btn-answer').classList.remove('correct-active');
-            document.querySelector('.btn-answer').classList.remove('active');
-
-            progressValue = answer / (quizData.length - 1) * 100;
-            progressBar.style.width = progressValue + '%';
-            
-        });
-
-    })
-     
-    </script>
-  </body>
+</body>
 </html>
