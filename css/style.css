@@ -56,6 +56,10 @@ header ul.gnb li.active{border-bottom:.3rem solid #000;}
 .portfolio-col .port-list li h3{margin:2rem 0 1.2rem; font-size:2rem; font-weight:700;}
 .portfolio-col .port-list li p{font-size:1.5rem;}
 
+.design-col{padding:10rem 0;}
+.design-col .inner-col{ overflow:hidden;}
+.design-col h2{margin-bottom:2rem; font-size:14rem; font-weight:900; text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; color:#fff;}
+.design-col .design-slide{position:relative;}
 
 .contact-col{padding:15rem 0; text-align:center;}
 .contact-col h2{margin-bottom:2rem; font-size:10rem; font-weight:900; text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; color:#fff;}

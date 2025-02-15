@@ -9,6 +9,8 @@ document.addEventListener('scroll', function(){
   }
 })
 
+
+
 $(document).ready(function(){
     
     const content = "안녕하세요. \n 끊임없이 성장하는 \n 3년차 웹퍼블리셔 \n 정효경입니다:)";
@@ -48,6 +50,14 @@ $(document).ready(function(){
       }
     });
   });
+
+  let designSlide = new Swiper(".design-slide", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
 
 });
 
