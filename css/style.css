@@ -22,7 +22,7 @@ header ul.gnb li.active{border-bottom:.3rem solid #000;}
 }
 
 .about-col{padding:15rem 0;background-image:url(/images/bg_txt.png); background-position:100% calc(10vh + 1.04167vw + 20rem); background-repeat:repeat-x; background-size:50% auto; background-attachment:fixed; position:relative; z-index:1; overflow:hidden; box-sizing:border-box; animation:aniScroll 30s linear infinite;}
-.about-col h2{margin-bottom:8rem; font-size:14rem; font-weight:900; text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; color:#fff; text-align:right;}
+.about-col h2{font-size:14rem; font-weight:900; text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; color:#fff; text-align:right;}
 .about-col .txt-box{display:flex; justify-content:center; gap:10rem; width:100%; margin-bottom:8rem; }
 .about-col .txt-box li{position:relative; width:27%;}
 .about-col .txt-box li::before{content:''; position:absolute; left:-2.5rem; top:0; width:1rem; height:100%; background-color:#000;}
@@ -83,7 +83,7 @@ header ul.gnb li.active{border-bottom:.3rem solid #000;}
     .banner-col h2{font-size:4rem; }
 
     .about-col{padding:8rem 0;background-image:url(/images/m_bg_txt.png); }
-    .about-col h2{margin-bottom:6rem; font-size:8rem; text-align:center;}
+    .about-col h2{font-size:8rem; text-align:center;}
     .about-col .txt-box{flex-wrap:wrap; gap:4rem; width:100%; margin-bottom:4rem;}
     .about-col .txt-box li{width:100%; padding-left:2rem;}
     .about-col .txt-box li::before{left:0; width:.4rem;}
